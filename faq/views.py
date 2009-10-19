@@ -37,7 +37,7 @@ def question_list( request, template_name='faq/question_list.html',
     query_set = Question.objects.active(group=group,user=request.user)
     
     if len(query_set) == 0:
-	raise Http404()
+	    raise Http404()
 
     last_update = query_set.values('updated_on').order_by('-updated_on',)[0]    
     extra = { 'updated_on': last_update['updated_on'] }
