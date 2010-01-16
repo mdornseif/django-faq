@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-faq',
-    version='0.1.0',
+    version='0.1.1',
     description='This is a simple FAQ application.',
     author='Kevin Fricovsky',
     author_email='kfricovsky@gmail.com',
@@ -19,5 +19,6 @@ setup(
     ],
     include_package_data=True,
     zip_safe=False,
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'simplejson'],
+    # also helpful: 'editdist' from http://www.mindrot.org/projects/py-editdist/
 )

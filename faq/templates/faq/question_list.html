@@ -16,7 +16,17 @@ Last updated on: {{ updated_on|date:"M d, Y" }}
 {{ question.text }}
 <br>
 <span class="answer">answer: {{ question.answer }}</span>
+{% if question.related %}
+<br><small>
+    {% for rquestion in question.related %}
+        {% if forloop.first %}
+            See also <a href="#rquestion.slug">{{ rquestion.text }}</a>
+        {% endif %}
+    {% endfor %}
+</small>
+{% endif %}
 </li>
+
 
 {% endfor %}
 </ol>

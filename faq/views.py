@@ -35,7 +35,9 @@ def question_list( request, template_name='faq/question_list.html',
     # to pass along their own additional extra_context using 'update'.
 
     query_set = Question.objects.active(group=group,user=request.user)
-    
+    for x in query_set.all():
+        print x.related
+
     if len(query_set) == 0:
 	    raise Http404()
 

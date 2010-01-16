@@ -1,0 +1,3 @@
+Version 1.1
+
+ * add automatic "related Questions" calculation. Can be accessed via the Question.relatied attribute

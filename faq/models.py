@@ -3,7 +3,9 @@ from datetime import datetime
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from managers import QuestionManager
+from relations import find_related_questions
 import enums
+import simplejson as json
 
 class Topic(models.Model):
     """
@@ -47,6 +49,8 @@ class Question(FaqBase):
     status = models.IntegerField( choices=enums.QUESTION_STATUS_CHOICES, default=enums.STATUS_INACTIVE, help_text="Only questions with their status set to 'Active' will be displayed. Questions marked as 'Group Header' are treated as such by views and templates that are set up to use them." )
     sort_order = models.IntegerField(_('sort order'), default=0, help_text='The order you would like the question to be displayed.')
     protected = models.BooleanField( default="False", help_text="Set true if this question is only visible by authenticated users." )
+    # json encoded list of IDs of related FAQ entries
+    related_cache = models.TextField(blank=True, default='', editable=False)
     
     objects = QuestionManager()
     
@@ -65,3 +69,16 @@ class Question(FaqBase):
 
     def is_active(self):
         return self.status == enums.STATUS_ACTIVE
+
+    @property
+    def related(self):
+        """Returns a list with the 5 most 'similar' Questions.
+        
+        This uses uses related_cache and can quite time consuming if no cached data exists."""
+        if not self.related_cache:
+            ret = find_related_questions(self)
+            self.related_cache = json.dumps([question.id for question in ret])
+            self.save()
+        else:
+            ret = [self.__class__.objects.get(id=faqid) for faqid in json.loads(self.related_cache)]
+        return ret
