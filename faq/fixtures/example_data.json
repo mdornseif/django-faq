@@ -44,7 +44,7 @@
         "topic": 1,
         "created_on": "2008-11-06 12:55:34",
         "sort_order": 1,
-        "answer": "This app allows someone to use the Django admin to manage a set of Frequently Asked Questions and subsequently display them using custom or generic views and built-in or custom templates. The app attempts to display "best practices " with regards to reusability by doing one thing (and hopefully doing it well) while allowing extension via the designation of an alternative template and/or extra content rn",
+        "answer": "This app allows someone to use the Django admin to manage a set of Frequently Asked Questions and subsequently display them using custom or generic views and built-in or custom templates. The app attempts to display \"best practices\" with regards to reusability by doing one thing (and hopefully doing it well) while allowing extension via the designation of an alternative template and/or extra content\r\n",
         "updated_on": "2010-01-16 04:06:49",
         "protected": false,
         "slug": "purpose"
@@ -61,7 +61,7 @@
         "topic": 2,
         "created_on": "2008-11-06 12:59:02",
         "sort_order": 2,
-        "answer": "You can now optionally designate Group Headers allowing questions regarding similar sub-topics to be grouped together. A new view called faq_list_by_group and an associated template has been added in the example app that demonstrates how to take advantage of this capability. (The original templates are unchanged by this new functionality.)rn</p>rn<p>rnYou can now designate questions and/or group headers as protected. Protected questions are only made visible to authenticated users.rn</p>rn<p>rnAdditionally the display of answers now includes an autoescape designation allowing you to embed HTML tags as you desire. (Keep in mind that the answer is wrapped in &lt;p&gt;&lt;/p&gt; tags and so adding those reduntantly at the beginning and end of your answer is not  required or recommended.)rn",
+        "answer": "You can now optionally designate Group Headers allowing questions regarding similar sub-topics to be grouped together. A new view called faq_list_by_group and an associated template has been added in the example app that demonstrates how to take advantage of this capability. (The original templates are unchanged by this new functionality.)\r\n</p>\r\n<p>\r\nYou can now designate questions and/or group headers as protected. Protected questions are only made visible to authenticated users.\r\n</p>\r\n<p>\r\nAdditionally the display of answers now includes an autoescape designation allowing you to embed HTML tags as you desire. (Keep in mind that the answer is wrapped in &lt;p&gt;&lt;/p&gt; tags and so adding those reduntantly at the beginning and end of your answer is not  required or recommended.)\r\n",
         "updated_on": "2010-01-16 04:06:56",
         "protected": false,
         "slug": "features"
@@ -95,7 +95,7 @@
         "topic": 1,
         "created_on": "2008-11-06 13:04:21",
         "sort_order": 101,
-        "answer": "Simple ensure that the faq app is somewhere on your PYTHONPATH. For a system-wide installation, you can install the faq app in your site-packages. I did that on my Ubuntu-based server like this:<br/><br/>rn<code>sudo cp -R faq /usr/lib/python2.5/site-packages</code><br/><br/>rnAnother approach is to create a personal site-packages directory and then set up your PYTHONPATH to include that. There are many other approaches as well.rn",
+        "answer": "Simple ensure that the faq app is somewhere on your PYTHONPATH. For a system-wide installation, you can install the faq app in your site-packages. I did that on my Ubuntu-based server like this:<br/><br/>\r\n<code>sudo cp -R faq /usr/lib/python2.5/site-packages</code><br/><br/>\r\nAnother approach is to create a personal site-packages directory and then set up your PYTHONPATH to include that. There are many other approaches as well.\r\n",
         "updated_on": "2010-01-16 04:05:02",
         "protected": false,
         "slug": "setup"
@@ -129,7 +129,7 @@
         "topic": 1,
         "created_on": "2008-11-06 13:15:07",
         "sort_order": 201,
-        "answer": "Yes. The default faq url does exactly this using the faq_list view (which wraps the faq apps' question_list view which itself wraps a generic object_list view.) The faq_list.html template displays the questions in order based on the order number you set in lowest to highest order.rn",
+        "answer": "Yes. The default faq url does exactly this using the faq_list view (which wraps the faq apps' question_list view which itself wraps a generic object_list view.) The faq_list.html template displays the questions in order based on the order number you set in lowest to highest order.\r\n",
         "updated_on": "2010-01-16 04:06:16",
         "protected": false,
         "slug": "standard_look_and_feel"
@@ -146,7 +146,7 @@
         "topic": 1,
         "created_on": "2008-11-06 13:31:50",
         "sort_order": 203,
-        "answer": "Yes. You turn a question into a Group Header by using the Group Header status flag. The question field becomes your header text. (The answer field is ignored although you are required to fill it in with something.) The order field determines where the header appears within your list of questions in the normal manner.rn</p>rn<p>rnAfter defining some group headers, you have to use a view and template that gathers and displays them or else your FAQ will be displayed in the normal default manner. This example app includes a view called rnfaq_list_by_group and a template called faq_list_by_group.html that demonstrates how to display grouped questions.rn",
+        "answer": "Yes. You turn a question into a Group Header by using the Group Header status flag. The question field becomes your header text. (The answer field is ignored although you are required to fill it in with something.) The order field determines where the header appears within your list of questions in the normal manner.\r\n</p>\r\n<p>\r\nAfter defining some group headers, you have to use a view and template that gathers and displays them or else your FAQ will be displayed in the normal default manner. This example app includes a view called \r\nfaq_list_by_group and a template called faq_list_by_group.html that demonstrates how to display grouped questions.\r\n",
         "updated_on": "2010-01-16 04:07:26",
         "protected": false,
         "slug": "grouped_look_and_feel"
@@ -163,7 +163,7 @@
         "topic": null,
         "created_on": "2008-11-12 11:59:39",
         "sort_order": 205,
-        "answer": "Questions and answers in the FAQ are managed by using the Django admin interface. You will need to have the proper permissions and instructions for logging into the admin (assuming that it is available at all for this deployment) in order to see the full list of questions and edit them.rn",
+        "answer": "Questions and answers in the FAQ are managed by using the Django admin interface. You will need to have the proper permissions and instructions for logging into the admin (assuming that it is available at all for this deployment) in order to see the full list of questions and edit them.\r\n",
         "updated_on": "2008-11-12 12:01:04",
         "protected": true,
         "slug": "add_FAQ"
@@ -180,7 +180,7 @@
         "topic": null,
         "created_on": "2008-11-15 14:43:05",
         "sort_order": 207,
-        "answer": "Yes. See the FAQSubmissionForm and the submittedFAQ view. This automates the submission process, but some staffer has to complete the process of adding the question.rn</p>rn<p>rnA submitted question may or may not include an answer. (If no answer was included by the submitter, then the answer field will be set to "No answer is available yet.") The submitted question will have a slug created by combining the submitter's user name and the current time. The sort order field will be set to 9999. The question will be marked "Inactive ". It is up to your staff to decide if the question is worth keeping and, if necessary, supply an answer and update the other fields as appropriate.",
+        "answer": "Yes. See the FAQSubmissionForm and the submittedFAQ view. This automates the submission process, but some staffer has to complete the process of adding the question.\r\n</p>\r\n<p>\r\nA submitted question may or may not include an answer. (If no answer was included by the submitter, then the answer field will be set to \"No answer is available yet.\") The submitted question will have a slug created by combining the submitter's user name and the current time. The sort order field will be set to 9999. The question will be marked \"Inactive\". It is up to your staff to decide if the question is worth keeping and, if necessary, supply an answer and update the other fields as appropriate.",
         "updated_on": "2008-11-15 14:43:05",
         "protected": false,
         "slug": "user_submissions"
